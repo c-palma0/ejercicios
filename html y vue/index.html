@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Formulario</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+
+</head>
+
+<body>
+ 
+    <form id="form" v-on:submit="validateForm" class="col-sm-8 form-horizontal container">
+   
+      <div class="form-group row"  >
+         <label for="example-text-input" class="col-2 col-form-label">Nombre</label> 
+        <div class="col-sm-10 " >
+          <input class="form-control" type="nombre"  id="nombre"
+           v-model="nombre" v-bind:class="{ 'alert-danger': attemptSubmit && missingName }">
+        </div>
+      </div>
+
+      <div class="form-group row" >
+        <label for="example-email-input" class="col-2 col-form-label">Correo </label>
+        <div class="col-10">
+          <input class="form-control" type="text"  id="correo" name="correo"
+           v-model="correo" v-bind:class="{ 'alert-danger': attemptSubmit && missingEmail }">
+        </div>
+      </div>
+
+      <div class="form-group row" >
+        <label for="example-text-input" class="col-2 col-form-label">C.P.</label>
+        <div class="col-10">
+          <input class="form-control" type="cp"  id="cp" name="cp" 
+          v-model="cp" v-bind:class="{ 'alert-danger': attemptSubmit && missingCp }">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="example-text-input" class="col-2 col-form-label">Edad</label>
+        <div class="col-10">
+          <input class="form-control" type="edad"  id="edad" name="edad" 
+          v-model="edad" v-bind:class="{ 'alert-danger': attemptSubmit && wrongNumber }">
+        </div>
+      </div>
+
+      <div class="form-group row" >
+        <label for="example-tel-input" class="col-2 col-form-label">Telefono</label>
+        <div class="col-10">
+          <input class="form-control" type="text"  id="tel" name="tel"
+           v-model="tel" v-bind:class="{ 'alert-danger': attemptSubmit && missingTel }">
+        </div>
+      </div>
+   
+      <div class="col-sm-10">
+        <button class="btn btn-primary ">Validar</button>
+      </div>
+    </form>
+   
+  <script src="https://unpkg.com/vue@2.4.2"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
